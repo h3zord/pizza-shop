@@ -40,7 +40,7 @@ export function PopularProductsChart() {
                 dataKey="amount"
                 cx="50%"
                 cy="50%"
-                outerRadius={86}
+                outerRadius={85}
                 innerRadius={64}
                 strokeWidth={8}
                 labelLine={false}
@@ -68,7 +68,7 @@ export function PopularProductsChart() {
                     >
                       {popularProducts[index].product.length > 12
                         ? popularProducts[index].product
-                            .substring(0, 12)
+                            .substring(0, 14)
                             .concat('...')
                         : popularProducts[index].product}{' '}
                       ({value})

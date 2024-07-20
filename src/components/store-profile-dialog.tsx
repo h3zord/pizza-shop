@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { Dispatch, SetStateAction } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
@@ -23,14 +24,18 @@ import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Textarea } from './ui/textarea'
 
+interface StoreProfileDialogProps {
+  setIsOpen: Dispatch<SetStateAction<boolean>>
+}
+
 const storeProfileSchema = z.object({
-  name: z.string().min(1),
+  name: z.string().min(3),
   description: z.string().nullable(),
 })
 
 type StoreProfileSchema = z.infer<typeof storeProfileSchema>
 
-export function StoreProfileDialog() {
+export function StoreProfileDialog({ setIsOpen }: StoreProfileDialogProps) {
   const queryClient = useQueryClient()
 
   const { data: managedRestaurant } = useQuery({
@@ -95,6 +100,8 @@ export function StoreProfileDialog() {
       })
 
       toast.success('Perfil atualizado com sucesso!')
+
+      setIsOpen(false)
     } catch {
       toast.error('Falha ao atualizar o perfil, tente novamente')
     }

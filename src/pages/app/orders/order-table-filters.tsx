@@ -125,6 +125,7 @@ export function OrderTableFilters() {
           )
         }}
       ></Controller>
+
       <Button variant="secondary" size="xs" type="submit">
         <Search className="mr-2 h-4 w-4" />
         Filtrar resultados

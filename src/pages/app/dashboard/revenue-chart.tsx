@@ -67,12 +67,19 @@ export function RevenueChart() {
         {chartData ? (
           <ResponsiveContainer width="100%" height={240}>
             <LineChart data={chartData} style={{ fontSize: 12 }}>
-              <XAxis dataKey="date" axisLine={false} tickLine={false} dy={16} />
+              <XAxis
+                dataKey="date"
+                stroke="#888"
+                axisLine={false}
+                tickLine={true}
+                dy={16}
+              />
               <YAxis
                 stroke="#888"
                 axisLine={false}
                 tickLine={false}
-                width={80}
+                dx={-10}
+                width={70}
                 tickFormatter={(value: number) =>
                   value.toLocaleString('pt-BR', {
                     style: 'currency',
@@ -82,10 +89,10 @@ export function RevenueChart() {
               />
               <CartesianGrid vertical={false} className="stroke-muted" />
               <Line
+                dataKey="receipt"
                 stroke={colors.violet[500]}
                 type="linear"
                 strokeWidth={2}
-                dataKey="receipt"
               />
             </LineChart>
           </ResponsiveContainer>

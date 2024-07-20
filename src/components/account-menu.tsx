@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { Building, ChevronDown, LogOut } from 'lucide-react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { getManagedRestaurant } from '@/api/get-managed-restaurant'
@@ -20,13 +21,9 @@ import {
 import { Skeleton } from './ui/skeleton'
 
 export function AccountMenu() {
-  const navigate = useNavigate()
+  const [isOpen, setIsOPen] = useState(false)
 
-  const { data: profile, isLoading: isLoadingProfile } = useQuery({
-    queryKey: ['profile'],
-    queryFn: getProfile,
-    staleTime: Infinity,
-  })
+  const navigate = useNavigate()
 
   const { data: managedRestaurant, isLoading: isLoadingManagedRestaurant } =
     useQuery({
@@ -34,6 +31,12 @@ export function AccountMenu() {
       queryFn: getManagedRestaurant,
       staleTime: Infinity,
     })
+
+  const { data: profile, isLoading: isLoadingProfile } = useQuery({
+    queryKey: ['profile'],
+    queryFn: getProfile,
+    staleTime: Infinity,
+  })
 
   const { mutateAsync: signOutFn, isPending: isSigningOut } = useMutation({
     mutationFn: signOut,
@@ -43,7 +46,7 @@ export function AccountMenu() {
   })
 
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOPen}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
@@ -75,13 +78,16 @@ export function AccountMenu() {
               </>
             )}
           </DropdownMenuLabel>
+
           <DropdownMenuSeparator />
+
           <DialogTrigger asChild>
             <DropdownMenuItem>
               <Building className="mr-2 h-4 w-4" />
               <span>Perfil da loja</span>
             </DropdownMenuItem>
           </DialogTrigger>
+
           <DropdownMenuItem
             asChild
             disabled={isSigningOut}
@@ -95,7 +101,7 @@ export function AccountMenu() {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      <StoreProfileDialog />
+      <StoreProfileDialog setIsOpen={setIsOPen} />
     </Dialog>
   )
 }

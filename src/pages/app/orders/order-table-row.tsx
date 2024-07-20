@@ -28,6 +28,7 @@ interface OrderTableRowProps {
 
 export function OrderTableRow({ order }: OrderTableRowProps) {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false)
+
   const queryClient = useQueryClient()
 
   function updateOrderStatusOnCache(orderId: string, status: OrderStatus) {
@@ -53,14 +54,6 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
     })
   }
 
-  const { mutateAsync: cancelOrderFn, isPending: isCancelingOrder } =
-    useMutation({
-      mutationFn: cancelOrder,
-      async onSuccess(_, { orderId }) {
-        updateOrderStatusOnCache(orderId, 'canceled')
-      },
-    })
-
   const { mutateAsync: approveOrderFn, isPending: isApprovingOrder } =
     useMutation({
       mutationFn: approveOrder,
@@ -82,6 +75,14 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
       mutationFn: deliverOrder,
       async onSuccess(_, { orderId }) {
         updateOrderStatusOnCache(orderId, 'delivered')
+      },
+    })
+
+  const { mutateAsync: cancelOrderFn, isPending: isCancelingOrder } =
+    useMutation({
+      mutationFn: cancelOrder,
+      async onSuccess(_, { orderId }) {
+        updateOrderStatusOnCache(orderId, 'canceled')
       },
     })
 
