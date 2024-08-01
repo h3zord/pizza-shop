@@ -13,7 +13,7 @@ export function App() {
   return (
     <HelmetProvider>
       <ThemeProvider defaultTheme="system" storageKey="pizzashop-theme">
-        <Helmet titleTemplate="%s | pizza.shop" />
+        <Helmet titleTemplate="%s | Pizza Shop" />
 
         <Toaster richColors />
 
