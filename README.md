@@ -52,7 +52,7 @@ A aplicação foi desenvolvida com Vite (versão 5.2.0), React (versão 18.2.0) 
 git clone git@github.com:h3zord/pizza-shop.git
 ```
 
-### 2 - Entre no repositório
+### 2 - Entre no repositório:
 ```
 cd pizza-shop
 ```
@@ -84,6 +84,13 @@ yarn run dev
 // URL da API
 VITE_API_URL="https://pizza-shop-api.up.railway.app"
 ```
+
+### 6 - Configure e inicie o back-end:
+<h3>
+  <a href="https://github.com/h3zord/pizza-shop-api" target="_blank">
+    ➜ Back-end
+  </a>
+</h3>
 
 <strong>Vite irá executar a aplicação na porta padrão 5173.</strong>
 <br/>
