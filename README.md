@@ -8,6 +8,16 @@
   </a>
 </h2>
 
+## Demonstração
+
+<div align="center">
+
+  https://github.com/user-attachments/assets/22130f0d-f5e3-46db-85c1-fcb7ecdbd8ec
+
+</div>
+
+<br/>
+
 ## O que foi desenvolvido?
 
 <strong>Pizza Shop</strong> é uma plataforma de gerenciamento de pedidos. A página inicial é uma área de login onde o usuário deve inserir seu email cadastrado. Caso não possua uma conta, é possível cadastrar um novo estabelecimento preenchendo um formulário com algumas informações. Após um login bem-sucedido, o usuário é direcionado para a tela "Dashboard", onde tem acesso a várias métricas importantes, como receita total, pedidos e cancelamentos no mês e pedidos do dia. A tela também inclui gráficos de produtos populares e da receita diária para um período específico determinado pelo usuário. Na tela de "Pedidos", são exibidas informações detalhadas sobre todos os pedidos, permitindo atualizar o status de cada um, como: pendente, em preparo, em entrega, entregue e cancelado. O usuário pode filtrar pedidos específicos pelo ID, nome do cliente ou status.
