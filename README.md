@@ -92,6 +92,11 @@ VITE_API_URL="https://pizza-shop-api.up.railway.app"
   </a>
 </h3>
 
+### 7 - Email default para login:
+```
+test@test.com
+```
+
 <strong>Vite irá executar a aplicação na porta padrão 5173.</strong>
 <br/>
 ➜ http://localhost:5173
