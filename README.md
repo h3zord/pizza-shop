@@ -67,7 +67,23 @@ Caso utilize o yarn
 yarn install
 ```
 
-### 4 - Inicie o projeto:
+### 4 - Configure as variáveis de ambiente:
+➜ <strong>Crie na raíz do projeto um arquivo .env</strong>
+
+```javascript
+// URL da API
+VITE_API_URL="http://localhost:3333"
+```
+
+### 5 - Configure e inicie o back-end:
+<h4>
+  <a href="https://github.com/h3zord/pizza-shop-api" target="_blank">
+    ➜ Back-end
+  </a>
+</h4>
+
+
+### 6 - Inicie o projeto:
 Caso utilize o npm
 ```
 npm run dev
@@ -77,20 +93,6 @@ Caso utilize o yarn
 yarn run dev
 ```
 
-### 5 - Configure as variáveis de ambiente:
-➜ <strong>Crie na raíz do projeto um arquivo .env</strong>
-
-```javascript
-// URL da API
-VITE_API_URL="http://localhost:3333"
-```
-
-### 6 - Configure e inicie o back-end:
-<h4>
-  <a href="https://github.com/h3zord/pizza-shop-api" target="_blank">
-    ➜ Back-end
-  </a>
-</h4>
 
 ### 7 - Email default para login:
 ```
