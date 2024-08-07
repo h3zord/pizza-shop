@@ -82,7 +82,7 @@ yarn run dev
 
 ```javascript
 // URL da API
-VITE_API_URL="https://pizza-shop-api.up.railway.app"
+VITE_API_URL="http://localhost:3333"
 ```
 
 ### 6 - Configure e inicie o back-end:
