@@ -86,11 +86,11 @@ VITE_API_URL="https://pizza-shop-api.up.railway.app"
 ```
 
 ### 6 - Configure e inicie o back-end:
-<h3>
+<h4>
   <a href="https://github.com/h3zord/pizza-shop-api" target="_blank">
     ➜ Back-end
   </a>
-</h3>
+</h4>
 
 ### 7 - Email default para login:
 ```
