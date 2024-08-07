@@ -82,7 +82,6 @@ VITE_API_URL="http://localhost:3333"
   </a>
 </h4>
 
-
 ### 6 - Inicie o projeto:
 Caso utilize o npm
 ```
@@ -92,7 +91,6 @@ Caso utilize o yarn
 ```
 yarn run dev
 ```
-
 
 ### 7 - Email default para login:
 ```
