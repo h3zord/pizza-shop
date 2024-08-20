@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 
 import { AppLayout } from './pages/_layouts/app'
 import { AuthLayout } from './pages/_layouts/auth'
@@ -12,11 +12,15 @@ import { Error } from './pages/error'
 export const router = createBrowserRouter([
   {
     path: '/',
+    element: <Navigate to="/sign-in" replace />,
+  },
+  {
+    path: '/',
     element: <AppLayout />,
     errorElement: <Error />,
     children: [
       {
-        path: '/',
+        path: '/dashboard',
         element: <Dashboard />,
       },
       {
