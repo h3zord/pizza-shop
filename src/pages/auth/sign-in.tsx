@@ -37,7 +37,7 @@ export function SignIn() {
     try {
       const authUrl = await authenticate({ email: data.email })
 
-      window.location.href = authUrl
+      window.location.assign(authUrl)
     } catch (error) {
       toast.error('Credenciais inválidas.')
     }
